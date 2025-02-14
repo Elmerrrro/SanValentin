@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    animation: heartbeat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 40px;
+    border-radius: 25px 25px 0 0;
+    background-color: red;
+}
+
+.heart::before {
+    left: 25px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos base para todos los botones excepto "Empezar" */
+button:not(.start-btn) {
+    padding: 10px 20px;
+    background-color: #ff4b6e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Efecto hover para todos los botones excepto "Empezar" */
+button:not(.start-btn):hover {
+    transform: scale(1.05); /* Escala el botón al 105% */
+    background-color: #ff3456; /* Cambia el color de fondo */
+}
+
+/* Estilos específicos para el botón "Empezar" */
+.start-btn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 22px 44px;
+    font-size: 35px;
+    background-color: #ff4b6e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 75, 110, 0.3);
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Estilos específicos para el botón "Quitar corazones" */
+.remove-hearts {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 19px;
+    background-color: #ff4b6e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 75, 110, 0.3);
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.start-btn.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.letter {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.letter.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.letter h2 {
+    color: #ff4b6e;
+    margin-top: 0;
+}
+
+.letter img {
+    max-width: 200px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Estilos específicos para el botón "Perdón amor te amo" */
+.sorry-btn {
+    padding: 10px 20px;
+    background-color: #ff4b6e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Animación para mostrar/ocultar la encuesta */
+.survey {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.survey.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Estilos para las preguntas divididas en dos líneas */
+.survey h2 {
+    color: #ff4b6e;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.survey h2:first-of-type {
+    margin-bottom: 5px;
+}
+
+.survey-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilos específicos para los botones de las encuestas */
+.option-btn {
+    padding: 12px 20px;
+}
+
+/* Animación para mostrar/ocultar la tarjeta de resultado */
+.result-card {
+    display: none; /* Inicialmente oculta */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.result-card.show {
+    display: block; /* Se muestra cuando tiene la clase 'show' */
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Estilos para la tarjeta de resultado */
+.result-card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ff4b6e;
+}
+
+.result-card .result-line {
+    border: none;
+    height: 2px;
+    background-color: #ff4b6e;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.result-card p {
+    margin-top: 15px;
+}
+
+.result-card.correct h2 {
+    color: #2ecc71;
+}
+
+.result-card.incorrect h2 {
+    color: #e74c3c;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para los botones "Volver" y "Siguiente" */
+.back-btn, .next-btn {
+    padding: 10px 20px;
+}
+
+.survey-line {
+    border: none;
+    height: 2px;
+    background-color: #ff4b6e;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.back-btn {
+    /* Estilos base del botón "Volver" */
+    padding: 10px 20px;
+    background-color: #ff4b6e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    /* Efecto hover */
+    transform: scale(1.05);
+    background-color: #ff3456;
+}
+
+.back-btn[data-special="true"] {
+    /* Estilos especiales para "Volver👍" */
+    background-color: #2ecc71; /* Verde */
+    font-weight: bold;
+}
+
+.text-input {
+    padding: 8px;
+    border: 1px solid #ff4b6e;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.scrollable-options {
+    max-height: 300px; /* Ajusta esta altura según lo que necesites */
+    overflow-y: auto; /* Hace que el contenido sea desplazable verticalmente */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    padding-right: 10px; /* Para evitar que el scroll tape el contenido */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Estilos para la cartita final */
+.final-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000;
+}
+
+.final-card.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.final-card h2 {
+    color: #ff4b6e; /* Mismo color que las preguntas */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.final-line {
+    border: none;
+    height: 2px;
+    background-color: #ff4b6e; /* Mismo color que las preguntas */
+    margin: 10px 0;
+    width: 100%;
+}
+
+.final-card p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Romántica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="start-btn" id="startBtn">Empezar</button>
+    <button class="remove-hearts" id="removeHeartsBtn">Quitar corazones</button>
+
+    <div class="letter" id="letter">
+        <div class="letter-content">
+            <h2>Yayayaya friegate</h2>
+            <img src="friegate.png" alt="Friegate" />
+            <button class="sorry-btn" id="sorryBtn">Perdón amor te amo</button>
+        </div>
+    </div>
+
+    <!-- Preguntas -->
+    <div class="survey" id="survey1">
+        <h2>1- ¿Qué fecha nos conocimos?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="false" data-message="yayayaya 😭😭">12 de abril</button>
+            <button class="option-btn" data-correct="true" data-message="Siii 😁😁">07 de mayo</button>
+            <button class="option-btn" data-correct="false" data-message="nisiquiera nos habiamos conocidoo 😭">10 de marzo</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey2">
+        <h2>2- ¿Quién ganó el Yan Ken poo, para declararnos?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="yo te había ganadoo odiosa">Elmer</button>
+            <button class="option-btn" data-correct="false" data-message="cómo vas a definir eso con un Yan Ken poo odiosa jaajja">Lópes</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey3">
+        <h2>3- ¿Desde cuándo fuimos novios?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="siii 😁😁 gracias a miii">11/10/23</button>
+            <button class="option-btn" data-correct="false" data-message="Ya te fregaste 😭😭 ahora empiezas de 0 por molestosa">12/02/23</button>
+            <button class="option-btn" data-correct="false" data-message="eso fue un año antes del día mas feliz de mi vida 🥹">26/08/23</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey4">
+        <h2>4- ¿Cuándo fue la primera vez que terminamos?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="false" data-message="te hago recordar, fue 1 día después de que todos supieran 👍👍">No me acuerdo</button>
+            <button class="option-btn" data-correct="true" data-message="👍">1 día después de que todos sepan</button>
+            <button class="option-btn" data-correct="true" data-message="siii y el 17/10/23 todos sabían 👍">18/10/23</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey5">
+        <h2>5- ¿Por qué terminamos por primera vez?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="jajajajaja sii">Por celosa</button>
+            <button class="option-btn" data-correct="true" data-message="🤣🫵🫵">Por celosa</button>
+            <button class="option-btn" data-correct="true" data-message="cómo vas a ser asiii">Por celosa</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey6">
+        <h2>6- ¿Qué haces si Elmer te manda un mensaje?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="Al menos eres bonita 🥹">Lo dejo en visto</button>
+            <button class="option-btn" data-correct="true" data-message="Por qué eres asii 😭">Me conecto y no lo leo</button>
+            <button class="option-btn" data-correct="true" data-message="Al menos es bonito">Le digo 'holas' cuando se me da la gana</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey7">
+        <h2>7- ¿Por qué dejas en visto a Elmer?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="No ps no, ni siquiera me dices">No lo entendería</button>
+            <button class="option-btn" data-correct="false" data-message="Celosa tú">Celoso</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey8">
+        <h2>8- ¿Con quién leíste el primer regalo que te di?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="false" data-message="Yo te había dicho eso">Sola</button>
+            <button class="option-btn" data-correct="true" data-message="Qué vergüenzaa encima había cosas de 😭😭😭😭">Con Rosi</button>
+            <button class="option-btn" data-correct="false" data-message="Era lo que te había dicho psss">En mi casa</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey9">
+        <h2>9- Si Elmer se queja de ti, ¿con qué te defiendes?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="👍">Con cosas que no tienen nada que ver</button>
+            <button class="option-btn" data-correct="true" data-message="👍">Con cosas que no se dicen</button>
+            <button class="option-btn" data-correct="true" data-message="👍">Con cosas para dejar mal a Elmer</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey10">
+        <h2>10- ¿Quién se despierta molesta e insulta a su novio que no tiene nada que ver, escribe 2-3 mensajes y luego no responde hasta las 8 pm o se desconecta a las 5 y regresa mañana?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="Por qué eres asii No seas así ya">Lópes</button>
+            <button class="option-btn" data-correct="false" data-message="Yo nuncaa">Elmer</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey11">
+        <h2>11- ¿Qué es lo malo de Elmer? (Según lo que dijiste ps odiosaa)</h2>
+        <hr class="survey-line">
+        <div class="survey-options scrollable-options">
+            <button class="option-btn" data-correct="false" data-message="Me lo dijiste desde el inicio">Odioso</button>
+            <button class="option-btn" data-correct="false" data-message="Se llama amor">Mañoso</button>
+            <button class="option-btn" data-correct="false" data-message="Es que me gustas muchoo">Meloso</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Idiota</button>
+            <button class="option-btn" data-correct="false" data-message="No es tan fuerte">Molestoso</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Tarado</button>
+            <button class="option-btn" data-correct="false" data-message="😭😭😭 encima me dices eso y cuando te veo en el colegio estás normal, osea, das cólera">Feo de mierda</button>
+            <button class="option-btn" data-correct="false" data-message="Nop porque me gusta todito de ti">Gay</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Baboso</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Hipócrita</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Tacaño</button>
+            <button class="option-btn" data-correct="false" data-message="🥹">Sisañoso</button>
+            <button class="option-btn" data-correct="false" data-message="Tú empiezas">Rajón</button>
+            <button class="option-btn" data-correct="true" data-message="😭">Todos los anteriores</button>
+        </div>
+    </div>
+
+    <div class="survey" id="survey12">
+        <h2>12- ¿Qué es lo bueno de Elmer?</h2>
+        <hr class="survey-line">
+        <div class="survey-options">
+            <button class="option-btn" data-correct="true" data-message="Esa respuesta es horribleee, ese penúltimo día de clases que dijiste eso y prácticamente dijiste que 'nada' porque qué es esooo qué respuesta fea, quedé mal 😭😭😭 aparte mira 👍">Su forma de ser</button>
+        </div>
+    </div>
+
+    <!-- Cartita final -->
+<div class="final-card" id="finalCard">
+    <h2>Feliz San Valentín</h2>
+    <hr class="final-line">
+    <p>Yo te dijeee que sí iba a haber regalo, pero ya bueno, amor, tú qué me vas a regalar??? 😁😁😁</p>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
